@@ -113,24 +113,42 @@
 
 // });
 
+(function ($) {
+    'use strict';
 
-$(function() {
-  $("#contact .button").click(function() {
-      var name = $("#name").val();
-      var email = $("#email").val();
-      var namepic = $("#namepic").val();
-      var number = $("#phone").val();
-      var dataString = 'name='+ name + '&email=' + email + '&namepic=' + namepic + '&number=' + number;
+    var form = $('.contactForm'),
+        message = $('#sendmessage'),
+        form_data;
 
-      $.ajax({
-          type: "POST",
-          url: "contactform/contactform.php",
-          data: dataString,
-          success: function(){
-          $('.success').fadeIn(1000);
-          }
-      });
+    // Success function
+    function done_func(response) {
+        message.fadeIn().removeClass('alert-danger').addClass('alert-success');
+        message.text(response);
+        setTimeout(function () {
+            message.fadeOut();
+        }, 2000);
+        form.find('input:not([type="submit"]), textarea').val('');
+    }
 
-      return false;
-  });
-});
+    // fail function
+    function fail_func(data) {
+        message.fadeIn().removeClass('alert-success').addClass('alert-success');
+        message.text(data.responseText);
+        setTimeout(function () {
+            message.fadeOut();
+        }, 2000);
+    }
+    
+    form.submit(function (e) {
+        e.preventDefault();
+        form_data = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            data: form_data
+        })
+        .done(done_func)
+        .fail(fail_func);
+    });
+    
+})(jQuery);
