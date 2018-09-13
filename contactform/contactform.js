@@ -92,12 +92,12 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "https://formspree.io/benedyctoes@gmail.com",
+      url: "https://formspree.io/info@e-kasbon.com",
       data: str,
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {
-          // $("#sendmessage").addClass("show");
+          $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
         } else {
