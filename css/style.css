@@ -395,7 +395,7 @@ a:hover {
 
 .partners ul li{
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 20%;
 }
 
@@ -403,11 +403,6 @@ a:hover {
   width: 100%; 
   height: auto;
 	margin-top:50px;
-}
-
-.partnerlogo {
-  /* height: 200px;
-  width: auto; */
 }
 
 /* Testimoni */
