@@ -422,7 +422,7 @@ a:hover {
   border-radius: 6px;
   margin: 10px;
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(253, 253, 253) 100%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 #testimoni h2 {
@@ -460,6 +460,9 @@ a:hover {
 /* /Testimoni */
 
 @media screen and (max-width: 991px) {
+  .about {
+    padding: 0;
+  }  
   #testimoni {
     padding: 50px 0;
   }
@@ -609,7 +612,7 @@ a:hover {
 
 .about {
 	background:#eee;
-	padding:50px;
+	padding:50px 0;
 }
 
 .about h2 {
