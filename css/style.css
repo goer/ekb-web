@@ -412,7 +412,14 @@ a:hover {
 
 /* Testimoni */
 #testimoni {
-  padding: 100px;
+  background: url(../images/partners/partner_bg.png) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+#testimoni {
+  color: #fff;
+  text-align: center;
+  padding:100px;
 }
 
 .testimoni-agen {
@@ -424,7 +431,7 @@ a:hover {
 }
 
 #testimoni h2 {
-  color: #333;
+  color: #fff;
   font-size:30px;
   font-weight:600;
 }
@@ -456,6 +463,18 @@ a:hover {
 }
 
 /* /Testimoni */
+
+@media screen and (max-width: 991px) {
+  #testimoni {
+    padding: 50px 0;
+  }
+  .container {
+  width: 98%;
+  }
+  .col-sm-6 .col-md-4{
+    float:right
+  }
+}
 
 #conatcat-info{
   background: #fff url(../images/contact.png) no-repeat 90% 0;
